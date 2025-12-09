@@ -991,7 +991,7 @@ const InsertVariableModal = ({ isOpen, onClose, categories, banks, onSelect, t }
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4 animate-fade-in">
+    <div className="fixed inset-0 bg-black/50 z-[100] flex items-center justify-center p-4 animate-fade-in">
       <div className="bg-white rounded-xl shadow-xl w-full max-w-md overflow-hidden flex flex-col max-h-[80vh] animate-slide-up">
         <div className="p-4 border-b border-gray-100 flex justify-between items-center bg-gray-50">
           <h3 className="font-bold text-gray-800 flex items-center gap-2">
@@ -1711,7 +1711,7 @@ const App = () => {
       `}>
         <div className="p-5 border-b border-gray-200/50 bg-white/30 backdrop-blur-sm">
            <div className="mb-4 flex justify-between items-center">
-               <h1 className="text-gray-800 font-bold text-sm tracking-wide">提示词填空器 <span className="text-gray-400 text-xs font-normal ml-1">V0.3.0</span></h1>
+               <h1 className="text-gray-800 font-bold text-sm tracking-wide">提示词填空器 <span className="text-gray-400 text-xs font-normal ml-1">V0.3.1</span></h1>
                {/* Language Toggle */}
                 <button 
                   onClick={() => setLanguage(language === 'cn' ? 'en' : 'cn')}
@@ -1985,29 +1985,6 @@ const App = () => {
         </div>
       </div>
 
-      {/* --- Category Manager Modal --- */}
-      <CategoryManager 
-        isOpen={isCategoryManagerOpen} 
-        onClose={() => setIsCategoryManagerOpen(false)}
-        categories={categories}
-        setCategories={setCategories}
-        banks={banks}
-        setBanks={setBanks}
-        t={t}
-      />
-
-      {/* --- Insert Variable Modal --- */}
-      <InsertVariableModal
-        isOpen={isInsertModalOpen}
-        onClose={() => setIsInsertModalOpen(false)}
-        categories={categories}
-        banks={banks}
-        onSelect={(key) => {
-            insertVariableToTemplate(key);
-            setIsInsertModalOpen(false);
-        }}
-        t={t}
-      />
 
       {/* --- 3. Main Editor (Right) --- */}
       <div className={`
@@ -2130,9 +2107,9 @@ const App = () => {
                                     </h2>
                                     {/* Tags / Meta (Example) */}
                                     <div className="flex flex-wrap gap-2 mb-2">
-                                        <span className="px-2.5 py-1 rounded-md bg-indigo-50 text-indigo-600 text-xs font-bold tracking-wide border border-indigo-100/50">
-                                            V0.3.0
-                                        </span>
+<span className="px-2.5 py-1 rounded-md bg-indigo-50 text-indigo-600 text-xs font-bold tracking-wide border border-indigo-100/50">
+    V0.3.1
+</span>
                                         <span className="px-2.5 py-1 rounded-md bg-amber-50 text-amber-600 text-xs font-bold tracking-wide border border-amber-100/50">
                                             Prompt Template
                                         </span>
@@ -2265,6 +2242,30 @@ const App = () => {
              <span className="text-[10px] font-medium">Editor</span>
           </button>
       </div>
+
+      {/* --- Category Manager Modal (Moved to bottom) --- */}
+      <CategoryManager 
+        isOpen={isCategoryManagerOpen} 
+        onClose={() => setIsCategoryManagerOpen(false)}
+        categories={categories}
+        setCategories={setCategories}
+        banks={banks}
+        setBanks={setBanks}
+        t={t}
+      />
+
+      {/* --- Insert Variable Modal (Moved to bottom) --- */}
+      <InsertVariableModal
+        isOpen={isInsertModalOpen}
+        onClose={() => setIsInsertModalOpen(false)}
+        categories={categories}
+        banks={banks}
+        onSelect={(key) => {
+            insertVariableToTemplate(key);
+            setIsInsertModalOpen(false);
+        }}
+        t={t}
+      />
 
     </div>
   );

@@ -33,9 +33,15 @@ if %errorlevel% equ 0 (
 
 :: 2. Check node_modules
 echo [Step 2/3] Checking dependencies...
-if not exist "node_modules" (
+set NEED_INSTALL=0
+if not exist "node_modules" set NEED_INSTALL=1
+if exist "node_modules" (
+    if not exist "node_modules\.bin\vite.cmd" set NEED_INSTALL=1
+)
+
+if %NEED_INSTALL%==1 (
     echo.
-    echo [INFO] Installing dependencies for the first time...
+    echo [INFO] Installing dependencies...
     echo [INFO] This may take a few minutes...
     echo.
     
