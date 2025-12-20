@@ -30,3 +30,13 @@ yarn-error.log*
 *.njsproj
 *.sln
 *.sw?
+
+# Backup files
+Backup/
+*.backup
+*.original
+*.refactored_backup
+*.latest
+*.git_latest
+App-clean.jsx
+重构完成-*.md

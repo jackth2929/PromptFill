@@ -81,6 +81,41 @@ export const INITIAL_BANKS = {
     category: "character",
     options: ["疯狂、病娇、狂喜", "羞涩、躲闪、红晕", "冷漠、鄙视、高傲", "痛苦、忍耐、咬唇"]
   },
+  character_originality: {
+    label: "人物原创性",
+    category: "character",
+    options: ["创作一个原创人物", "使用附图中的人物，确保结果与人物一致性", "对知名角色再创作"]
+  },
+  character_groups: {
+    label: "人物组合",
+    category: "character",
+    options: [
+      "中国古代开国皇帝",
+      "漫威人物",
+      "金庸古龙武侠人物",
+      "三国知名人物",
+      "知名军事家（拿破仑、凯撒、曹操等）",
+      "全球知名运动员",
+      "中外知名侦探（包青天、狄仁杰、福尔摩斯、柯南等）",
+      "动漫游戏角色",
+      "历史名人",
+      "明星艺人"
+    ]
+  },
+  social_media: {
+    label: "社交媒体",
+    category: "location",
+    options: [
+      "微信朋友圈",
+      "微博",
+      "Twitter(X)",
+      "小红书",
+      "Instagram",
+      "Facebook",
+      "抖音",
+      "TikTok"
+    ]
+  },
   texture_zoom: {
     label: "材质特写",
     category: "visual",
@@ -154,8 +189,27 @@ export const INITIAL_BANKS = {
       "Pixar 卡通渲染",
       "黏土动画质感",
       "手办级实体渲染",
-      "3D像素风格"
+      "3D像素风格",
+      "手工毛线针织风格",
+      "毛线针织",
+      "毛毡与粘土",
+      "纸壳纸板"
     ]
+  },
+  show_name: {
+    label: "剧名",
+    category: "other",
+    options: ["泰坦尼克号", "龙猫", "哈利·波特", "星际穿越", "千与千寻", "复仇者联盟"]
+  },
+  character_name: {
+    label: "角色",
+    category: "character",
+    options: ["Jack and Rose", "龙猫", "哈利·波特", "库珀", "千寻", "绿巨人", "萨诺斯", "钢铁侠"]
+  },
+  art_type: {
+    label: "艺术门类",
+    category: "other",
+    options: ["美术学", "时尚学", "建筑学", "摄影学", "雕塑艺术", "工业设计"]
   },
   company: {
     label: "公司",
@@ -175,7 +229,8 @@ export const INITIAL_BANKS = {
       "9:16竖构图",
       "1:1",
       "4:3横构图",
-      "16:9横构图"
+      "16:9横构图",
+      "圆形画幅"
     ]
   },
   // Fashion Template additions
@@ -220,6 +275,145 @@ export const INITIAL_BANKS = {
     label: "背景场景",
     category: "location",
     options: ["俯瞰纽约市的复仇者大厦楼顶", "废弃的工业仓库", "熙熙攘攘的时代广场", "外太空飞船内部"]
+  },
+
+  // Fish Eye Urban Template additions
+  lens_type: {
+    label: "镜头类型",
+    category: "visual",
+    options: ["标准镜头", "广角镜头", "长焦镜头", "极端鱼眼镜头", "移轴镜头", "微距镜头"]
+  },
+  school_uniform: {
+    label: "校服样式",
+    category: "item",
+    options: ["传统水手服校服", "灰色开衫和格子裙校服", "英伦风百褶裙校服", "日系JK制服", "运动校服", "冬季大衣校服"]
+  },
+  urban_location: {
+    label: "城市地点",
+    category: "location",
+    options: ["涩谷十字路口", "东京塔下", "时代广场", "埃菲尔铁塔旁", "中央公园", "北京王府井", "上海外滩", "香港维多利亚港"]
+  },
+  dynamic_action: {
+    label: "动态动作",
+    category: "action",
+    options: ["一只手夸张地伸向镜头前景", "双臂张开拥抱天空", "旋转跳跃", "奔跑前进", "蹲下捡拾", "挥手致意", "舞蹈姿势", "比心手势"]
+  },
+  fingernail_detail: {
+    label: "手指甲细节",
+    category: "visual",
+    options: ["手指甲清晰可见", "涂有鲜艳指甲油", "自然裸色指甲", "装饰有钻石指甲", "渐变色指甲", "艺术图案指甲"]
+  },
+  building_cluster: {
+    label: "建筑群",
+    category: "location",
+    options: ["扭曲的涩谷109大楼和其他建筑林立", "纽约摩天大楼群", "巴黎古典建筑", "上海现代高层建筑", "东京传统寺庙与现代建筑混合", "伦敦金融城高楼"]
+  },
+  monster_element: {
+    label: "怪兽元素",
+    category: "character",
+    options: ["巨大的粉色和蓝色渐变卡通怪兽", "机械机器人怪兽", "神话传说中的龙", "外星生物", "海洋深渊巨兽", "森林精灵"]
+  },
+  monster_feature: {
+    label: "怪兽特征",
+    category: "character",
+    options: ["巨大的触手和角", "锋利的爪子和牙齿", "多彩的翅膀", "发光的眼睛", "金属外壳", "藤蔓植物"]
+  },
+  distorted_city: {
+    label: "扭曲城市",
+    category: "location",
+    options: ["扭曲的城市景观", "镜面反射的城市", "梦幻泡泡中的城市", "像素化的城市", "水墨画风格的城市", "未来科幻城市"]
+  },
+  lighting_atmosphere: {
+    label: "灯光氛围",
+    category: "visual",
+    options: ["阳光明媚", "月光皎洁", "霓虹灯闪烁", "烛光摇曳", "舞台聚光灯", "自然晨光", "夕阳余晖", "室内暖光"]
+  },
+  shadow_contrast: {
+    label: "阴影对比",
+    category: "visual",
+    options: ["光影对比强烈", "柔和的阴影", "戏剧性阴影", "无阴影平光", "轮廓光", "背光剪影"]
+  },
+  travel_location: {
+    label: "旅游地点",
+    category: "location",
+    options: [
+      "西藏拉萨布达拉宫",
+      "湖南林中小寨",
+      "东北雪乡",
+      "老北京胡同",
+      "云南大理洱海",
+      "新疆喀纳斯湖",
+      "四川九寨沟",
+      "桂林漓江",
+      "张家界天门山",
+      "敦煌莫高窟",
+      "内蒙古呼伦贝尔草原",
+      "台湾日月潭"
+    ]
+  },
+  comic_scene: {
+    label: "漫画场景",
+    category: "location",
+    options: [
+      "唯美的卧室",
+      "繁华的街头",
+      "温馨的教室",
+      "现代咖啡厅",
+      "公园长椅",
+      "图书馆角落",
+      "艺术工作室",
+      "屋顶天台",
+      "火车站月台",
+      "书店一角"
+    ]
+  },
+  designer: {
+    label: "设计师",
+    category: "character",
+    options: [
+      "安东尼·高迪 (Antoni Gaudí)",
+      "Jonathan Ive (Jony Ive)",
+      "Gio Ponti",
+      "迪特·拉姆斯 (Dieter Rams)",
+      "菲利普·斯塔克 (Philippe Starck)",
+      "原研哉 (Kenya Hara)",
+      "深泽直人 (Naoto Fukasawa)",
+      "扎哈·哈迪德 (Zaha Hadid)",
+      "马克·纽森 (Marc Newson)",
+      "汤姆·迪克森 (Tom Dixon)",
+      "贾斯珀·莫里森 (Jasper Morrison)",
+      "康斯坦丁·葛切奇 (Konstantin Grcic)"
+    ]
+  },
+  design_item: {
+    label: "设计物品",
+    category: "item",
+    options: [
+      "无人机",
+      "台球桌",
+      "拖拉机",
+      "机械键盘",
+      "复古打字机",
+      "单反相机",
+      "扫地机器人",
+      "咖啡机",
+      "台灯",
+      "椅子",
+      "音响系统",
+      "手表",
+      "自行车",
+      "电动滑板车",
+      "蓝牙耳机",
+      "智能音箱",
+      "剃须刀",
+      "电风扇",
+      "水壶"
+    ]
+  },
+  rain_shape: {
+    label: "雨水形象",
+    category: "visual",
+    options: ["芭蕾舞者", "飞舞的蝴蝶", "奔跑的骏马", "绽放的莲花", "轻盈的羽毛", "灵动的音符"]
   }
 };
 
@@ -235,6 +429,9 @@ export const INITIAL_DEFAULTS = {
   clothing_male: "剪裁合体的深蓝西装",
   clothing_female: "炭灰色无袖连衣裙",
   expressions: "疯狂、病娇、狂喜",
+  character_originality: "创作一个原创人物",
+  character_groups: "中外知名侦探（包青天、狄仁杰、福尔摩斯、柯南等）",
+  social_media: "微信朋友圈",
   texture_zoom: "凌乱感与私处汗渍",
   action_detail: "带着项圈的爬行",
   special_view: "被踩在脚下的仰视视角",
@@ -260,6 +457,28 @@ export const INITIAL_DEFAULTS = {
   sticker_core: "用户穿着甜美约会装的照片",
   sticker_decor: "手绘爱心、闪光符号",
   action_pose: "用手指在男人脑后比划'兔耳朵'",
-  background_scene: "俯瞰纽约市的复仇者大厦楼顶"
+  background_scene: "俯瞰纽约市的复仇者大厦楼顶",
+
+  // Fish Eye Urban defaults
+  lens_type: "极端鱼眼镜头",
+  school_uniform: "灰色开衫和格子裙校服",
+  urban_location: "涩谷十字路口",
+  dynamic_action: "一只手夸张地伸向镜头前景",
+  fingernail_detail: "手指甲清晰可见",
+  building_cluster: "扭曲的涩谷109大楼和其他建筑林立",
+  crowd_traffic: "挤满行人和车辆",
+  monster_element: "巨大的粉色和蓝色渐变卡通怪兽",
+  monster_feature: "巨大的触手和角",
+  distorted_city: "扭曲的城市景观",
+  lighting_atmosphere: "阳光明媚",
+  shadow_contrast: "光影对比强烈",
+  travel_location: "西藏拉萨布达拉宫",
+  comic_scene: "唯美的卧室",
+  designer: "Jonathan Ive (Jony Ive)",
+  design_item: "无人机",
+  rain_shape: "芭蕾舞者",
+  art_type: "美术学",
+  show_name: "龙猫",
+  character_name: "龙猫"
 };
 
